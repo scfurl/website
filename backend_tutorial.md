@@ -320,4 +320,19 @@ app.listen(PORT, () => {
 
 ```
 
+## Add amplify dependencies
+
+```sh
+cd /Users/sfurlan/Dropbox/Family/Julie/Practice/website/website
+npm create amplify@latest
+
+
+```
+
+
+
+## Deploy
+
+
+
 
