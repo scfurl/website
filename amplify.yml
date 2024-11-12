@@ -1,0 +1,22 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        # install rust
+        - curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+        - source ~/.cargo/env
+        # install trunk
+        - cargo install trunk
+        # add WASM target
+        - rustup target add wasm32-unknown-unknown
+    build:
+      commands:
+        - trunk build --release
+  artifacts:
+    baseDirectory: dist
+    files:
+      - "**/*"
+  cache:
+    paths:
+      - target/**/*
